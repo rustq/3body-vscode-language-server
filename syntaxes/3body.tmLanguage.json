@@ -1,0 +1,55 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "3body",
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.3body",
+				"match": "\\b(if|while|for|return)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.3body",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.3body",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "text.3body.basic",
+	"patterns": [
+		{
+			"begin": "\"",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.3body"
+				}
+			},
+			"end": "\"",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.end.3body"
+				}
+			},
+			"name": "string.quoted.double.3body"
+		},
+		{
+			"match": "(面壁|破壁|延绪)",
+			"name": "keyword.control.3body"
+		},
+		{
+			"begin": "//",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.comment.3body"
+				}
+			},
+			"end": "$",
+			"name": "comment.line.number-sign.3body"
+		}
+	]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "3body-vscode-language-server",
+  "displayName": "3body-vscode-language-server",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.54.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "3body",
+      "aliases": ["3body", "3body"],
+      "extensions": [".3body"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "3body",
+      "scopeName": "text.3body.basic",
+      "path": "./syntaxes/3body.tmLanguage.json"
+    }]
+  }
+}
