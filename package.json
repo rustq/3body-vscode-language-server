@@ -2,6 +2,7 @@
   "name": "3body-vscode-language-server",
   "displayName": "3body-vscode-language-server",
   "description": "",
+  "repository": "https://github.com/rustq/3body-vscode-language-server",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.54.0"
