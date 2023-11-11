@@ -4,24 +4,34 @@
 	"repository": {
 		"keywords": {
 			"patterns": [{
-				"name": "keyword.control.3body",
-				"match": "\\b(if|while|for|return)\\b"
+				"name": "keyword.control.basic",
+				"match": "\\b(if|else|return)\\b"
+			}, {
+				"name": "keyword.reserved.basic",
+				"match": "\\b(let)\\b"
+			}, {
+				"name": "keyword.opeator.basic",
+				"match": "\\b(>|<|==)\\b"
 			}]
 		},
-		"strings": {
-			"name": "string.quoted.double.3body",
-			"begin": "\"",
-			"end": "\"",
+		"operators": {
 			"patterns": [
 				{
-					"name": "constant.character.escape.3body",
-					"match": "\\\\."
+					"match": "!=|<=|>=|==|<|>",
+					"name": "keyword.operator.comparison.basic"
+				},
+				{
+					"match": "%|\\*|/|-|\\+|前进|降维",
+					"name": "keyword.operator.basic"
 				}
 			]
 		}
 	},
 	"scopeName": "text.3body.basic",
 	"patterns": [
+		{
+			"include": "#keywords"
+		},
 		{
 			"begin": "\"",
 			"beginCaptures": {
@@ -38,8 +48,35 @@
 			"name": "string.quoted.double.3body"
 		},
 		{
-			"match": "(面壁|破壁|延绪)",
+			"match": "\\b(面壁|破壁|延绪)\\b",
 			"name": "keyword.control.3body"
+		},
+		{
+			"match": "\\b(给|思想钢印|法则)\\b",
+			"name": "keyword.reserved.3body"
+		},
+		{
+			"match": "\\b(这是计划的一部分)\\b",
+			"name": "constant.language.boolean.true.3body"
+		},
+		{
+			"match": "\\b(主不在乎)\\b",
+			"name": "constant.language.boolean.false.3body"
+		},
+		{
+			"match": "\\b(广播|冬眠|二向箔清理|毁灭|没关系的都一样)\\b",
+			"name": "support.function.builtin.coffee"
+		},
+		{
+			"match": "([\u4e00-\u9fa5_a-zA-Z0-9$_][\\w$]*)?\\s*(=|以)",
+			"captures": {
+				"1": {
+					"name": "variable.assignment.3body"
+				},
+				"2": {
+					"name": "keyword.operator.assignment.3body"
+				}
+			}
 		},
 		{
 			"begin": "//",
@@ -50,6 +87,9 @@
 			},
 			"end": "$",
 			"name": "comment.line.number-sign.3body"
+		},
+		{
+			"include": "#operators"
 		}
 	]
 }
