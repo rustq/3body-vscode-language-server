@@ -1,15 +1,24 @@
 {
   "name": "3body-vscode-language-server",
   "displayName": "3body-vscode-language-server",
-  "description": "",
+  "publisher": "meloalright",
+  "description": "3body-lang syntax highlighter",
   "repository": "https://github.com/rustq/3body-vscode-language-server",
-  "version": "0.0.1",
+  "homepage": "https://github.com/rustq/3body-vscode-language-server",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.54.0"
   },
   "categories": [
     "Programming Languages"
   ],
+  "icon": "images/default.png",
+  "galleryBanner": {
+    "color": "#000000",
+    "theme": "dark"
+  },
+  "pricing": "Free",
+  "license": "MIT",
   "contributes": {
     "languages": [{
       "id": "3body",
